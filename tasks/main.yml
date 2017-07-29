@@ -1,0 +1,4 @@
+- name: Provision {{ app_name }} application
+  command: "oc new-app {{ app_image }} --name={{ app_name }}"
+  register: result
+  failed_when: "'--> Success' not in result.stdout and 'already exists' not in result.stderr"
