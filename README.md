@@ -20,7 +20,7 @@ This playbook has been tested against Fedora 25.
     - hosts: localhost
       remote_user: root
       roles:
-        - { role: hekonsek.fedora-openshift-newapp,0.0, vars: { app_image: my/dockerimage:0.0, app_name: myapp }
+        - { role: "hekonsek.fedora-openshift-newapp,0.0", vars: { app_image: "my/dockerimage:0.0", app_name: myapp }
 
 ## License
 
