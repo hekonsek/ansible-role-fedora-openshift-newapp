@@ -1,6 +1,6 @@
 galaxy_info:
   author: Henryk Konsek
-  description: Deploys new application into OpenShift.
+  description: Deploys new application into OpenShift. Optionally exposes deployed service to the outside world.
   company: Red Hat
 
   license: Apache 2.0
@@ -10,6 +10,6 @@ galaxy_info:
   platforms:
   - name: Fedora
     versions:
-    - 25
+    - 26
 
   galaxy_tags: ["fedora", "docker", "kubernetes", "openshift"]
