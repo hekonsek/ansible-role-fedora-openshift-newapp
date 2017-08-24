@@ -5,12 +5,12 @@
 
 - name: Expose {{ app_name }} service
   when: "app_expose"
-  command: "oc expose service {{ app_name }}"
+  command: "oc expose service {{ app_name }} --hostname={{ app_name }}-default.{{ router_host }}"
   register: result
   failed_when: "'exposed' not in result.stdout and 'already exists' not in result.stderr"
 
 - name: "Add local DNS entry for {{ app_name }} service"
-  when: "app_expose"
+  when: 'app_expose and router_host == "router.default.svc.cluster.local"'
   lineinfile:
     path: /etc/hosts
     regexp: "^127.0.0.1 {{ app_name }}-default.router.default.svc.cluster.local$"

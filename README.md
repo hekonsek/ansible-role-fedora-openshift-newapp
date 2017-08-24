@@ -8,7 +8,7 @@ This playbook has been tested against Fedora 26.
 
 ## Installation 
 
-    ansible-galaxy install hekonsek.fedora-openshift-newapp,0.1
+    ansible-galaxy install hekonsek.fedora-openshift-newapp,0.2
 
 ## Variables
 
@@ -16,13 +16,14 @@ This playbook has been tested against Fedora 26.
 - `app_name` - name of the application to be used.
 - `app_expose` - if application service should be exposed to the outside world via router. Also ensures that appropriate local DNS
 entry has been added to `/etc/hosts`.
+- `router_host` - host name used by router to expose services to the outside world. Default value is `router.default.svc.cluster.local`.
 
 ## Example playbook
 
     - hosts: localhost
       remote_user: root
       roles:
-        - { role: "hekonsek.fedora-openshift-newapp,0.01,
+        - { role: "hekonsek.fedora-openshift-newapp,0.2,
             vars: { app_image: "my/dockerimage:0.0", app_name: myapp, app_expose=true }
 
 ## License

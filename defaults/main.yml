@@ -1,1 +1,2 @@
 app_expose: false
+router_host: router.default.svc.cluster.local
