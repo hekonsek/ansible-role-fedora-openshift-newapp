@@ -24,7 +24,8 @@ entry has been added to `/etc/hosts`.
       remote_user: root
       roles:
         - { role: "hekonsek.fedora-openshift-newapp,0.2,
-            vars: { app_image: "my/dockerimage:0.0", app_name: myapp, app_expose=true, router_host: "example.com" }
+            vars: { app_image: "my/dockerimage:0.0", app_name: myapp, app_expose=true, 
+                    router_host: "example.com" }
 
 ## License
 
